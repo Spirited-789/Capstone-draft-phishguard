@@ -1,0 +1,9 @@
+{
+  "malicious": [
+    "malicious-example.com"
+  ],
+  "suspicious": [
+    "example.com",
+    "DataDiddys.com"
+  ]
+}

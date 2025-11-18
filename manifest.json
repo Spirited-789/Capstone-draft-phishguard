@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "PHISHGUARD",
+  "version": "1.0",
+  "description": "A browser extension to detect phishing sites in real-time.",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage",
+    "tabs",
+    "alarms",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*/*",
+    "https://urlhaus.abuse.ch/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "static/css/styles.css",
+        "static/js/blocked.js",
+        "static/images/logo.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+"content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://generativelanguage.googleapis.com http://urlhaus.abuse.ch;"
+  }
+}
